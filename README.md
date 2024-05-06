@@ -22,4 +22,4 @@ The code is made available under licence GNU-GPL 3.0.
 
 ## Questions and remarks
 
-In case you have any question of remark, feel free to contact me at: julien.legendre@icfo.eu.
+In case you have any question of remark, feel free to contact the author at: julien.legendre@icfo.eu.
