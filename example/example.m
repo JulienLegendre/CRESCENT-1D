@@ -9,7 +9,6 @@
     % a .mat file, and to load it at each simulation.
     % The LED structure is flipped so that the two front layers face each
     % other.
-    %run("C:/Users/jlegendre/Documents/Results/2022_12-Hétérojonctions/2023_08 InGaP - InGaAs TPX/Device/InGaP_InGaAs_Device.m");
     d1 = flip(structure_LED());
     d2 = structure_PV();
 
@@ -56,5 +55,3 @@
         "IterChemPotential",true,"TIatInterfaces",true,"TunnelDepth",50e-9,"RadRecElectrolum",true,"VariableWeights",false,"stopAtVoc",true,"iterEf",false,"kuSetPoint",[1 1;91 1;96 1;101 1;106 1;111 1;116 1;121 1]};
 
     [Pmax,d1,d2,P,q,eff]=crescent1D(d1,d2,d,weq,opts{:});
-
-    %movefile('TPX_1D_Het3.mat','TPX_testaperture-top.mat');

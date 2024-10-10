@@ -68,7 +68,8 @@ function [Pmax,varargout] = crescent1D(d1,d2,d,wrange,options)
         options.kuSetPoint              (:,2) double {mustBeInteger,mustBeNonnegative} = [0 0];     % sets of voltage indices [ku1 ku2] for which the spatial quantities obtained in the drift-diffusion solver shall be saved
     end
 
-    timerVal=tic;    
+    timerVal=tic;
+    cputimeInit=cputime;
     warning('backtrace','off');
     run("FundamentalConstants.m"); % loads the fundamental constants
     
@@ -121,6 +122,7 @@ function [Pmax,varargout] = crescent1D(d1,d2,d,wrange,options)
     z=cumsum(t);
     
     disp(join(['Creation of the system: done (',string(duration(seconds(toc(timerVal)),'Format','hh:mm:ss')),').']));
+    disp(join(['CPU time: ',string(duration(seconds(cputime-cputimeInit),'Format','hh:mm:ss')),'.']));
 
     %% Section 3: Compute the radiative transmission coefficient/function
 
@@ -276,6 +278,7 @@ function [Pmax,varargout] = crescent1D(d1,d2,d,wrange,options)
     clear Fkr Fkr2 F Fin1 Fin2 PhiBack
     clear kr d2Phi varTemp
     disp(join(['Computation of the near-field transmission coefficient: done (',string(duration(seconds(toc(timerVal)),'Format','hh:mm:ss')),').']));
+    disp(join(['CPU time: ',string(duration(seconds(cputime-cputimeInit),'Format','hh:mm:ss')),'.']));
 
     %% Section 4: Compute the equilibrium electrostatic potential profile
 
@@ -537,10 +540,12 @@ function [Pmax,varargout] = crescent1D(d1,d2,d,wrange,options)
     
     % Show computational time
     timerVal=toc(timerVal);
+    timerCPU=cputime-cputimeInit;
     disp(join(['End of calculation, performed in',string(duration(seconds(timerVal),'Format','hh:mm:ss')),'.']));
+    disp(join(['CPU time: ',string(duration(seconds(timerCPU),'Format','hh:mm:ss')),'.']));
     
     % Clear useless data and save useful data
-    clear d1s d2s DDflag errMu1 errMu2 calc_state i idxdata idxeq iterMu j k1 k11 k2 k22 ku1 ku2 mu20 timerVal
+    clear d1s d2s DDflag errMu1 errMu2 calc_state i idxdata idxeq iterMu j k1 k11 k2 k22 ku1 ku2 mu20 cputimeInit
     save data_crescent1D.mat
     
 end
