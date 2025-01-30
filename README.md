@@ -16,6 +16,10 @@ The repository is divided into three main folders:
 * **material_properties**, in which are gathered the MATLAB functions used to set the **material properties** of the component layers
 * **example**, in which we show an **example** of how to call crescent1D
 
+## Compatibility
+
+The code has been developed in MATLAB 2023, and compatibility issues may arise with other versions. This in particularly true for the *Algo_Thomas_mex* file. If this file raises an error, the best approach is to regenerate it from the *Algo_Thomas.m* file using [MATLAB Coder](https://fr.mathworks.com/help/coder/index.html?s_tid=CRUX_lftnav). It is also possible to simply replace the *Algo_Thomas_mex* function called in *DriftDiffHet.m* and *DriftDiffHetEq.m* by *Algo_Thomas*, although this will cause a decrease in the solver efficiency.
+
 ## Licence
 
 The code is made available under licence GNU-GPL 3.0.
