@@ -542,9 +542,9 @@ function [d,calc_state,varargout] = DriftDiffHet(d,Vfb,G,id,options)
         else % non-physical quasi Fermi level -> change related weights
             switch weightFermiChange
                 case "n"
-                    d.wefn=d.wefn/2;%sqrt(10);
+                    d.wefn=d.wefn/2;
                 case "p"
-                    d.wefp=d.wefp/2;%sqrt(10);
+                    d.wefp=d.wefp/2;
                 case "leap"
                     d.wefleap=d.wefleap/2;
                 case "next"
@@ -554,8 +554,8 @@ function [d,calc_state,varargout] = DriftDiffHet(d,Vfb,G,id,options)
                         otherwise, d.wnext=.8;
                     end
                 otherwise
-                    d.wefn=d.wefn/2;%sqrt(10);
-                    d.wefp=d.wefp/2;%sqrt(10);
+                    d.wefn=d.wefn/2;
+                    d.wefp=d.wefp/2;
                     d.wefleap=d.wefleap/2;
             end
             % if weights are too small, stop the calculation

@@ -51,7 +51,6 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Options %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     opts={"Nw",Nwa,"Nwb",Nwb,"Nkr",Nkr,"U",U,"BelowBandgap",false,...
-        "stopAtVoc",true,"iterEf",false,...
-        "IterChemPotential",true,"TIatInterfaces",true,"TunnelDepth",50e-9,"RadRecElectrolum",true,"VariableWeights",false,"stopAtVoc",true,"iterEf",false,"kuSetPoint",[1 1;91 1;96 1;101 1;106 1;111 1;116 1;121 1]};
+        "iterEf",false,"IterChemPotential",true,"TIatInterfaces",true,"TunnelDepth",50e-9,"RadRecElectrolum",true,"VariableWeights",false,"stopAtVoc",true,"iterEf",false,"kuSetPoint",[1 1;91 1;96 1;101 1;106 1;111 1;116 1;121 1]};
 
     [Pmax,d1,d2,P,q,eff]=crescent1D(d1,d2,d,weq,opts{:});
