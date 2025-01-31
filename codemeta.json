@@ -1,0 +1,64 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "type": "SoftwareSourceCode",
+    "applicationCategory": "Optoelectronics",
+    "author": [
+        {
+            "id": "https://orcid.org/0000-0001-7316-1954",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Centre for Energy and Thermal Sciences (CETHIL - UMR5008), Villeurbanne, France"
+            },
+            "email": "julien.legendre@icfo.eu",
+            "familyName": "Legendre",
+            "givenName": "Julien"
+        },
+        {
+            "type": "Role",
+            "schema:author": "https://orcid.org/0000-0001-7316-1954",
+            "roleName": "Developer"
+        },
+        {
+            "id": "https://orcid.org/0000-0002-6264-2530",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Centre for Energy and Thermal Sciences (CETHIL - UMR5008), Villeurbanne, France"
+            },
+            "email": "pierre-olivier.chapuis@insa-lyon.fr",
+            "familyName": "Chapuis",
+            "givenName": "Pierre-Olivier"
+        },
+        {
+            "type": "Role",
+            "schema:author": "https://orcid.org/0000-0002-6264-2530",
+            "roleName": "Manager"
+        }
+    ],
+    "codeRepository": "https://github.com/JulienLegendre/CRESCENT-1D",
+    "description": "CRESCENT-1D is a Coupled Radiative and Electrical Solver for Efficient Near-field Thermophotonics in 1D, developed in MATLAB. This solver can estimate the performance of near-field thermophotonic devices used in a heat engine configuration. Such devices are made of two facing optoelectronic components: a heated light-emitting diode, and a photovoltaic cell kept at ambient temperature. By carefully controlling the voltage applied to each component, the overall system is capable of converting part of the heat delivered to the light-emitting diode into electrical power.\n\nCRESCENT-1D, as its name suggests, couples a radiative and an electrical solver. The radiative solver is based on the fluctuational electrodynamics framework, and provides the spatially- and spectrally-resolved photon transmission coefficient between the two components. Then, the electrical solver simulates charge transport in each component based on the drift-diffusion equations, which allows obtaining their current-voltage characteristic. These two segments of the overall solver are coupled through the radiative heat flux density flowing in the system, which depends both on the photon transmission coefficient and on the local charge concentration (through the photon chemical potential), and is used as an input of the electrical solver.",
+    "funder": {
+        "type": "Organization",
+        "name": "European Union’s Horizon 2020 research and innovation programme"
+    },
+    "keywords": [
+        "optoelectronics",
+        "LED",
+        "photovoltaic cell",
+        "near field",
+        "drift-diffusion equations",
+        "heterostructure"
+    ],
+    "license": "https://spdx.org/licenses/GPL-3.0",
+    "name": "CRESCENT-1D",
+    "operatingSystem": [
+        "Linux",
+        "Windows"
+    ],
+    "programmingLanguage": "MATLAB",
+    "softwareRequirements": "Developed on MATLAB 2023.",
+    "developmentStatus": "inactive",
+    "funding": "G.A. 951976",
+    "referencePublication": "https://doi.org/10.1109/TED.2025.3528870"
+}
